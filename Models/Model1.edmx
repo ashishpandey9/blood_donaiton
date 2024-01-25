@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BloodModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BloodModelStoreContainer">
+          <EntitySet Name="TBL_Contact" EntityType="BloodModel.Store.TBL_Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_Login" EntityType="BloodModel.Store.TBL_Login" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_newLogin" EntityType="BloodModel.Store.TBL_newLogin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_Registration" EntityType="BloodModel.Store.TBL_Registration" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="TBL_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="MSG" Type="varchar" MaxLength="300" />
+          <Property Name="Contactdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_Login">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_newLogin">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_Registration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="Profile" Type="varchar(max)" />
+          <Property Name="Qualification" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="District" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="varchar" MaxLength="50" />
+          <Property Name="RegDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BloodModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BloodEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_Contact" EntityType="BloodModel.TBL_Contact" />
+          <EntitySet Name="TBL_Login" EntityType="BloodModel.TBL_Login" />
+          <EntitySet Name="TBL_newLogin" EntityType="BloodModel.TBL_newLogin" />
+          <EntitySet Name="TBL_Registration" EntityType="BloodModel.TBL_Registration" />
+        </EntityContainer>
+        <EntityType Name="TBL_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="MSG" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Contactdate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_Login">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_newLogin">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TBL_Registration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Profile" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Qualification" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="District" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DOB" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RegDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BloodModelStoreContainer" CdmEntityContainer="BloodEntities">
+          <EntitySetMapping Name="TBL_Contact">
+            <EntityTypeMapping TypeName="BloodModel.TBL_Contact">
+              <MappingFragment StoreEntitySet="TBL_Contact">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MSG" ColumnName="MSG" />
+                <ScalarProperty Name="Contactdate" ColumnName="Contactdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Login">
+            <EntityTypeMapping TypeName="BloodModel.TBL_Login">
+              <MappingFragment StoreEntitySet="TBL_Login">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_newLogin">
+            <EntityTypeMapping TypeName="BloodModel.TBL_newLogin">
+              <MappingFragment StoreEntitySet="TBL_newLogin">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Registration">
+            <EntityTypeMapping TypeName="BloodModel.TBL_Registration">
+              <MappingFragment StoreEntitySet="TBL_Registration">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
